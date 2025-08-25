@@ -1,13 +1,18 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using SQLite;
-using System.ComponentModel.DataAnnotations;
 
 namespace DebtorsMapping.Models
 {
     public partial class Customer : ObservableObject
     {
-        [ObservableProperty]
         private int _id;
+
+        [PrimaryKey, AutoIncrement]
+        public int Id
+        {
+            get => _id;
+            set => SetProperty(ref _id, value);
+        }
 
         [ObservableProperty]
         private string _name;

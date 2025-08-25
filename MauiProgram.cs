@@ -22,7 +22,7 @@ public static class MauiProgram
             });
 
         // --- Database and Service Registration ---
-        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "customers.db3");
+        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "customers3.db3");
         builder.Services.AddSingleton(s => ActivatorUtilities.CreateInstance<DatabaseService>(s, dbPath));
 
         // --- ViewModel and View Registration ---

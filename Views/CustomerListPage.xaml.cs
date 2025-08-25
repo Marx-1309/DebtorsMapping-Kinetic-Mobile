@@ -36,13 +36,13 @@ public partial class CustomerListPage : ContentPage
         if (action == "Set Location")
         {
             navParams["IsSettingLocation"] = true;
-            await Shell.Current.GoToAsync("MainPage", navParams);
+            await Shell.Current.GoToAsync("///MapPage", navParams);
         }
         else if (action == "View on Map")
         {
             if (customer.HasLocation)
             {
-                await Shell.Current.GoToAsync("MainPage", navParams);
+                await Shell.Current.GoToAsync("///MapPage", navParams);
             }
             else
             {
