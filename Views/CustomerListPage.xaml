@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:DebtorsMapping.ViewModels"
+             xmlns:models="clr-namespace:DebtorsMapping.Models"
+             x:DataType="viewModels:CustomersViewModel"
+             x:Class="DebtorsMapping.Views.CustomerListPage"
+             Title="Customers">
+    <CollectionView ItemsSource="{Binding Customers}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:Customer">
+                <Frame Padding="10" Margin="10,5" CornerRadius="5">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Text="{Binding LocationString, StringFormat='Location: {0}'}" FontSize="Small" />
+                        </VerticalStackLayout>
+                        <ImageButton Grid.Column="1" Source="more_vert.png" WidthRequest="40" HeightRequest="40" Clicked="OnActionsClicked" CommandParameter="{Binding .}" />
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
